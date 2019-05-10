@@ -1,39 +1,16 @@
 {
   "name": "wedtest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/niefanjun/wedtest.git"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^2.0.2",
-    "cross-env": "^5.2.0",
-    "ejs": "^2.6.1",
-    "jQuery": "^1.7.4",
-    "jquery": "^3.4.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "web-webpack-plugin": "^4.6.1",
-    "webpack-cli": "^3.3.1"
-  },
-  "devDependencies": {
-    "webpack": "^4.30.0",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
-  },
-  "bugs": {
-    "url": "https://github.com/niefanjun/wedtest/issues"
-  },
-  "homepage": "https://github.com/niefanjun/wedtest#readme"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  }
 }
