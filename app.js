@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var Mock = require('mockjs');
 
 var app = express();
 
@@ -21,6 +22,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/mocklist',function(req, res, next) {
+	var data = Mock.mock({
+	    // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
+	    'list|10': [{
+	        // 属性 id 是一个自增数，起始值为 1，每次增 1
+	        'id|1-9999999': 1,
+	        'name': /([a-zA-Z0-9]){5,10}/,
+	        'sex': /[男女]/,
+	        'city': /([A-Z]){2}/,
+	        'age|20-30': 1
+	    }]
+	})
+	// 输出结果
+	res.json(data);
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
